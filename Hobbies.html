@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+
+    <style>
+        /* IMPORTANT: This CSS block assumes you already have the :root variables, 
+        body, container, section-card, etc., defined from previous responses.
+        I'm only providing the new and modified CSS specifically for the hobbies section here.
+        Make sure to integrate this into your existing <style> tag.
+        */
+    
+        /* --- New/Modified CSS for Hobbies Section with Images --- */
+    
+        .hobbies-grid {
+            display: grid;
+            /* Default to one column, will adjust for larger screens */
+            grid-template-columns: 1fr; 
+            gap: 30px; /* Increased gap for better spacing with images */
+            margin-top: 20px;
+        }
+    
+        /* Style for each individual hobby item (card + image) */
+        .hobby-item {
+            display: flex; /* Use flexbox for image and content alignment */
+            flex-direction: column; /* Default stack on small screens */
+            background-color: var(--card-background); /* Use card background for the whole item */
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            overflow: hidden; /* Ensures image corners are rounded if overflow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    
+        .hobby-item:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        .hobby-image {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            overflow: hidden;
+            /* For odd/even items, decide image placement */
+            /* For example, for even items, image could be on the right on larger screens */
+        }
+    
+        .hobby-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+    
+        .hobby-item:hover .hobby-image img {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+    
+        .hobby-content {
+            padding: 25px;
+            flex-grow: 1; /* Allows content to take available space */
+        }
+    
+        .hobby-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+    
+        .hobby-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+    
+        .hobby-content ul li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Space for the custom bullet */
+            position: relative;
+        }
+    
+        .hobby-content ul li:before {
+            content: '🌟'; /* A more engaging custom bullet icon */
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+    
+        /* Media queries for responsiveness */
+        @media (min-width: 768px) {
+            .hobbies-grid {
+                /* Create a two-column layout on larger screens */
+                grid-template-columns: repeat(2, 1fr);
+            }
+    
+            .hobby-item {
+                flex-direction: row; /* Image and content side-by-side */
+            }
+    
+            /* Specific styles for alternating image positions */
+            .hobbies-grid .hobby-item:nth-child(even) { /* Even numbered items */
+                flex-direction: row-reverse; /* Image on right */
+            }
+    
+            .hobby-image {
+                width: 40%; /* Image takes 40% width */
+                height: auto; /* Height adapts to content */
+                flex-shrink: 0; /* Prevents image from shrinking */
+            }
+    
+            .hobby-content {
+                width: 60%; /* Content takes 60% width */
+            }
+        }
+    
+        @media (max-width: 767px) {
+            .hobbies-grid {
+                grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+            }
+            .hobby-image {
+                height: 180px; /* Slightly smaller image on mobile */
+            }
+        }
+    
+    </style>
+
+</head>
+
+<link rel="stylesheet" href="style.css">
+
+<body>
+    
+    <nav>
+        <ul class="nav_menu">
+            <li><a href="index.html">Home page</a></li>
+            <li><a href="About.html">About Me</a></li>
+            <li><a href="Hobbies.html">Hobbies</a></li>
+            <li><a href="Achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-card">
+        <h2>🎯 My Diverse Hobbies & Interests</h2>
+        <p>
+            I believe in maintaining a balanced life that stimulates the body, mind, and spirit. My interests span across outdoor adventure, creative expression, team building, and continuous intellectual growth.
+        </p>
+    
+        <div class="hobbies-grid">
+    
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="Expedito.jpg" alt="Outdoor Activities - Hiking, Camping, Cycling">
+                </div>
+                <div class="hobby-content">
+                    <h3>⛰️ Outdoor Activities</h3>
+                    <ul>
+                        <li>Hiking</li>
+                        <li>Camping</li>
+                        <li>Cycling</li>
+                        <li>Running</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="Allan7.jpeg" alt="">
+                </div>
+                <div class="hobby-content">
+                    <h3>✏️ Creative Pursuits</h3>
+                    <ul>
+                        <li>Drawing</li>
+                        <li>Music (Singing)</li>
+                        <li>Writing</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="Allan.jpg" alt="">
+                </div>
+                <div class="hobby-content">
+                    <h3>⚽ Sports & Fitness</h3>
+                    <ul>
+                        <li>Team sports (Soccer)</li>
+                        <li>Jogging</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="Allan8.jpeg" alt="">
+                </div>
+                <div class="hobby-content">
+                    <h3>🧠 Intellectual Pursuits</h3>
+                    <ul>
+                        <li>Reading</li>
+                        <li>Studying Science and carrying out calculations (Mathematics)</li>
+                        <li>Writing short stories</li>
+                        <li>Learning coding and programming (ICT)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="Mozart.jpg" alt="">
+                </div>
+                <div class="hobby-content">
+                    <h3>🤝 Social Activities</h3>
+                    <ul>
+                        <li>Joining a sports team</li>
+                        <li>Going on group outings</li>
+                        <li>Mentoring and coaching others</li>
+                    </ul>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+</body>
+</html>

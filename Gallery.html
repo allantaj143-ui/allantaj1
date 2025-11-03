@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .card-body {
+            background-color: #f8f9fa;
+        }
+
+        .gallery-header {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: blue;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+
+        .card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        nav>ul>li{
+            display: inline;
+        }
+        nav>ul>li>a{
+            color: white;
+            background-color: rgb(1, 94, 1);
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        nav>ul>li>a:hover{
+            background-color: rgb(163, 163, 6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav_menu">
+            <li><a href="index.html">Home page</a></li>
+            <li><a href="About.html">About Me</a></li>
+            <li><a href="Hobbies.html">Hobbies</a></li>
+            <li><a href="Achievements.html">Achievements</a></li>
+            <li><a href="gallery1.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Content -->
+    <div class="container mt-5">
+        <h2 class="gallery-header">Gallery</h2>
+
+        <!-- Family & Friends Section -->
+        <h3 class="section-title">Family & Friends</h3>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="TAJ1.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Allan TAJ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Allan10.jpg" class="card-img-top" alt="Family Members">
+                    <div class="card-body">
+                        <p class="card-text">Family Members</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="Allan12.jpg" class="card-img-top" alt="Friends">
+                    <div class="card-body">
+                        <p class="card-text">Friends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section style="margin: auto;">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="width:600px; height: 700px;>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img style="width: 400px; height: 500px;" src="Allan9.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img style="width: 400px; height: 500px;" src="Allan10.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan11.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan12.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan13.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan14.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan15.jpg" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 400px; height: 500px;" src="Allan16.jpg" class="d-block w-100" alt="">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
